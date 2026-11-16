@@ -1,0 +1,15 @@
+{
+  "name": "edvisery-crm",
+  "private": true,
+  "version": "0.2.0",
+  "workspaces": ["packages/*", "apps/*"],
+  "scripts": {
+    "build:shared": "npm run build -w @edvisery/shared",
+    "test": "npm run test -w @edvisery/shared",
+    "dev:api": "npm run build:shared && npm run dev -w @edvisery/api",
+    "dev:web": "npm run build:shared && npm run dev -w @edvisery/web",
+    "migrate": "npm run migrate -w @edvisery/api",
+    "seed": "npm run seed -w @edvisery/api",
+    "build": "npm run build:shared && npm run build -w @edvisery/api && npm run build -w @edvisery/web"
+  }
+}
